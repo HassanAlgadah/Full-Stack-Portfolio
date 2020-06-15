@@ -106,8 +106,9 @@ def add_message():
 def update_project(payload, id):
     try:
         data = request.get_json()
+        print(data)
         project = Project.query.get(id)
-        project.name = data.get('name'),
+        project.name = data.get('name')
         project.description = data.get('description')
         project.image = data.get('image')
         project.link = data.get('link')
