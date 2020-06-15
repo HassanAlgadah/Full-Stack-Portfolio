@@ -9,6 +9,7 @@ setup_db(app)
 
 @app.route('/')
 def home():
+    Message.query.delete()
     projects = Project.query.all()
     return render_template('index-1.html', data=projects)
 
