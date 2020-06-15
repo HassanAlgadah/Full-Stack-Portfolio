@@ -104,21 +104,18 @@ def add_message():
 @app.route('/projects/<id>', methods=['PATCH'])
 @requires_auth('patch:project')
 def update_project(payload, id):
-    try:
-        data = request.get_json()
-        print(data)
-        project = Project.query.get(id)
-        project.name = data.get('name')
-        project.description = data.get('description')
-        project.image = data.get('image')
-        project.link = data.get('link')
-        project.update()
-        return jsonify({
-            'success': True,
-            'project': project.format()
-        })
-    except:
-        abort(400)
+    data = request.get_json()
+    print(data)
+    project = Project.query.get(id)
+    project.name = data.get('name')
+    project.description = data.get('description')
+    project.image = data.get('image')
+    project.link = data.get('link')
+    project.update()
+    return jsonify({
+        'success': True,
+        'project': project.format()
+    })
 
 
 @app.route('/projects/<id>', methods=['DELETE'])
