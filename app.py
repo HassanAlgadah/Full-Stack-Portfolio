@@ -102,7 +102,8 @@ def add_message():
 
 
 @app.route('/projects/<id>', methods=['PATCH'])
-def update_project(id):
+@requires_auth('patch:project')
+def update_project(payload, id):
     print("11111")
     data = request.get_json()
     print(data)

@@ -253,7 +253,10 @@
                 'link': document.getElementById('gl'+id).value
             })
         })
-        location.reload()
+        console.log({'name': document.getElementById('na'+id).value,
+                'description': document.getElementById('description'+id).value,
+                'image': document.getElementById('im'+id).value,
+                'link': document.getElementById('gl'+id).value})
     }
 
     async function newpro() {
