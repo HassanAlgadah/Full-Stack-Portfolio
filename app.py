@@ -85,18 +85,20 @@ def add_project(payload):
 
 @app.route('/messages', methods=['POST'])
 def add_message():
-    data = request.form
-    if request.get_json():
-        data = request.get_json()
-    if data.get('name') is None:
+    try:
+        data = request.form
+        if request.get_json():
+            data = request.get_json()
+        if data.get('name') is None:
+            abort(400)
+        message = Message(name=data.get('name'),
+                          email=data.get('email'),
+                          number=data.get('number'),
+                          message=data.get('message'))
+        message.insert()
+        return redirect('/')
+    except:
         abort(400)
-    message = Message(name=data.get('name'),
-                      email=data.get('email'),
-                      number=data.get('number'),
-                      message=data.get('message'))
-    message.insert()
-    return redirect('/')
-
 
 
 @app.route('/projects/<id>', methods=['PATCH'])

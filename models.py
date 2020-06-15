@@ -48,7 +48,7 @@ class Message(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, )
     email = db.Column(db.String(120), nullable=False)
-    number = db.Column(db.String(10))
+    number = db.Column(db.String(15))
     message = db.Column(db.String(1000), nullable=False)
 
     def insert(self):
