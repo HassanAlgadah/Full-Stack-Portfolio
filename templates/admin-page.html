@@ -241,7 +241,7 @@
 
     async function updatepro(id) {
         await fetch('https://full-stack-portfolio-api.herokuapp.com/projects/3', {
-            method: 'patch',
+            method: 'PATCH',
             headers: {
                 'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
                 'Content-Type': 'application/json'
