@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Hassan algadah</title>
+    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../static/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/assets/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="../static/assets/fonts/fontawesome5-overrides.min.css">
+</head>
+
+<body id="page-top">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-dark text-uppercase" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>portfolio</strong></a>
+        <button data-toggle="collapse" data-target="#navbarResponsive"
+                class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Messages</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://dev--g8cs8k5.auth0.com/v2/logout?client_id=42DvQROM7iUYGlV1Os0Ncf7B0FDHaRyo&returnTo=http://127.0.0.1:5000/">log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container"><img class="img-fluid d-block mx-auto mb-5" src="../static/assets/img/profile.png">
+        <h1>Hassan Algadah</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Web Developer - Android Developer</h2>
+    </div>
+</header>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-secondary">Projects</h2>
+        <hr class="star-dark mb-5">
+        <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#newpro"><i
+                class="material-icons d-flex d-xl-flex justify-content-center justify-content-xl-center"
+                style="font-size: 105px">add</i></a>
+        <div class="row">
+            {% for d in data %}
+                <div class="col-md-6 col-lg-4">
+                    <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#index{{ d.id }}">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="my-auto portfolio-item-caption-content w-100 text-center text-white">
+                                <i class="fa fa-search-plus fa-3x" style="margin: 10px;margin-right: 19px;"></i>
+                                <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#edit{{ d.id }}"><i
+                                        class="far fa-edit fa-3x"></i></a>
+                                <i onclick="deletepro({{ d.id }})" class="material-icons fa-3x"
+                                   style="width: 66px;height: 72px;font-size: 72px;color: rgb(255,0,0);">delete_forever</i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" style="height: 300px;width:300px" src="{{ d.image }}"></a>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+<section id="about" class="bg-primary text-white mb-0"></section>
+
+
+
+    <section id="contact">
+        <br>
+        <br>
+        <div class="container">
+            <h2 class="text-uppercase text-center text-secondary mb-0">Messages</h2>
+        </div>
+    </section>
+
+
+
+<footer class="footer text-center" style="background-color: rgb(52, 58, 64);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Location</h4>
+                <p>Saudi Arabia - Riyadh</p>
+            </div>
+            <div class="col-md-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase">Around the Web</h4>
+                <ul class="list-inline">
+                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://www.linkedin.com/in/hassan-algadah/"><i
+                            class="fa fa-linkedin-square fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://twitter.com/g33dh"><i
+                            class="fa fa-twitter fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://github.com/HassanAlgadah"><i
+                            class="fa fa-github fa-fw"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright py-4 text-center text-white" style="background-color: rgb(30,34,37);">
+    <div class="container"><small>Copyright ©&nbsp;Hassan algadah 2020</small></div>
+</div>
+{% for d in data %}
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a
+            class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i
+            class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="index{{ d.id }}">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">{{ d.name }}</h2>
+                                <hr class="star-dark mb-5">
+                                <img class="img-fluid mb-5" src="{{ d.image }}">
+                                <p class="mb-5">{{ d.description }}</p>
+                                <p class="mb-5">github link: {{ d.link }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a
+                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
+                        href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+{% for d in data %}
+    <form >
+        <div class="d-lg-none scroll-to-top position-fixed rounded"><a
+                class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i
+                class="fa fa-chevron-up"></i></a></div>
+        <div class="modal text-center" role="dialog" tabindex="-1" id="edit{{ d.id }}">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class="col-lg-8 mx-auto">
+                                    <label>project name:<input id="na{{ d.id }}" type="text" name="name"
+                                                               value="{{ d.name }}"></label>
+                                    <hr class="star-dark mb-5">
+                                    <img class="img-fluid mb-5" src="{{ d.image }}">
+                                    <label>image link :<input id="im{{ d.id }}" type="text" name="image"
+                                                              value="{{ d.image }}"></label><br>
+                                    <label>project description<textarea id="description{{ d.id }}"
+                                                                        style="width: 100%; height: 150px;padding: 12px 20px;box-sizing: border-box;border: 2px solid #ccc;border-radius: 4px;background-color: #f8f8f8;resize: none;"
+                                                                        type="text"
+                                                                        name="description">{{ d.description }}</textarea></label>
+                                    <br>
+                                    <label>github link: <input id="gl{{ d.id }}" type="text" name="link"
+                                                               value="{{ d.link }}"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer pb-5"><input type="button" onclick="updatepro({{ d.id }})" value="Update!"
+                                                          class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss">&nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endfor %}
+
+
+
+<div class="d-lg-none scroll-to-top position-fixed rounded"><a
+        class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i
+        class="fa fa-chevron-up"></i></a></div>
+<div class="modal text-center" role="dialog" tabindex="-1" id="newpro">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">×</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <label>project name:<input id="nan" type="text" name="name"></label>
+                            <label>image link :<input id="imn" type="text" name="image"></label><br>
+                            <label>project description<textarea id="descriptionn"
+                                                                style="width: 100%; height: 150px;padding: 12px 20px;box-sizing: border-box;border: 2px solid #ccc;border-radius: 4px;background-color: #f8f8f8;resize: none;"
+                                                                type="text" name="description"></textarea></label>
+                            <br>
+                            <label>github link: <input id="gln" type="text" name="link"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer pb-5"><input type="button" onclick="newpro()" value="Submit!"
+                                                  class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss">&nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="../static/assets/js/freelancer.js"></script>
+<script>
+    let access_token = new URLSearchParams(window.location.hash).get('#access_token');
+    if (access_token && !window.localStorage.getItem('access_token')) {
+        window.localStorage.setItem("access_token", access_token);
+    }
+
+    async function deletepro(id) {
+        await fetch('/projects/' + id, {
+            method: 'delete',
+            headers: {'Authorization': 'Bearer ' + window.localStorage.getItem('access_token')}
+        })
+        location.reload()
+    }
+
+    async function updatepro(id) {
+        await fetch('/projects/' + id, {
+            method: 'patch',
+            headers: {
+                'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'name': document.getElementById('na'+id).value,
+                'description': document.getElementById('description'+id).value,
+                'image': document.getElementById('im'+id).value,
+                'link': document.getElementById('gl'+id).value
+            })
+        })
+        location.reload()
+    }
+
+    async function newpro() {
+        await fetch('/projects', {
+            method: 'post',
+            headers: {
+                'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                'name': document.getElementById('nan').value,
+                'description': document.getElementById('descriptionn').value,
+                'image': document.getElementById('imn').value,
+                'link': document.getElementById('gln').value
+            })
+        })
+        location.reload()
+    }
+
+    async function load_messages() {
+        let response = await fetch('/messages',{
+            method:'get',
+            headers: {
+                'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+            }
+
+        })
+       let data = await response.json()
+        console.log(data.messages[0].name)
+        for (message in data.messages) {
+            document.getElementById('contact').innerHTML += "        <div class=\"container\">\n" +
+                "            <hr class=\"star-dark mb-5\">\n" +
+                "            <div class=\"row\">\n" +
+                "                <div class=\"col-lg-8 mx-auto\">\n" +
+                "                        <div class=\"control-group\">\n" +
+                "                            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\"><p>Name: " + data.messages[message].name + "</p><small class=\"form-text text-danger help-block\"></small></div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"control-group\">\n" +
+                "                            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\"><p>Email Address: " + data.messages[message].email + "</p><small class=\"form-text text-danger help-block\"></small></div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"control-group\">\n" +
+                "                            <div class=\"form-group floating-label-form-group controls mb-0 pb-2\"><p>Phone Number:"+ data.messages[message].number+"</p><small class=\"form-text text-danger help-block\"></small></div>\n" +
+                "                        </div>\n" +
+                "                        <div class=\"control-group\">\n" +
+                "                            <div class=\"form-group floating-label-form-group controls mb-5 pb-2\"><textarea style=\"width: 100%; height: 150px;padding: 12px 20px;box-sizing: border-box;border: 2px solid #ccc;border-radius: 4px;background-color: #f8f8f8;resize: none;\" readonly>"+ data.messages[message].message+"</textarea><small class=\"form-text text-danger help-block\"></small></div>\n" +
+                "                        </div>\n" +
+                "                        <div id=\"success\"></div>\n" +
+                "                </div>\n" +
+                "            </div>\n" +
+                "        </div>"
+        }
+    }
+    load_messages()
+
+</script>
+
+</body>
+
+</html>
