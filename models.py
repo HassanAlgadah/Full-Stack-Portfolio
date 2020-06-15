@@ -1,11 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, create_engine
 
-
 database_name = "portfolio"
 database_user = 'postgres'
 database_pass = '123'
-database_path = f'postgresql://{database_user}:{database_pass}@localhost:5432/{database_name}'
+database_path = 'postgres://fhomutmxyqjzqz:372dcc312cb85ded68430a74773a2a50c1c50af4cc6a4934791560ac01aede60@ec2-34' \
+                '-197-141-7.compute-1.amazonaws.com:5432/d5stmf6fnmshnp '
 db = SQLAlchemy()
 
 
