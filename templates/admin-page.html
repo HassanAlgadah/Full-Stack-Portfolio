@@ -240,7 +240,7 @@
     }
 
     async function updatepro(id) {
-        await fetch('https://full-stack-portfolio-api.herokuapp.com/projects/3', {
+        await fetch('/projects/' + id, {
             method: 'PATCH',
             headers: {
                 'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
@@ -253,10 +253,7 @@
                 'link': document.getElementById('gl'+id).value
             })
         })
-        console.log({'name': document.getElementById('na'+id).value,
-                'description': document.getElementById('description'+id).value,
-                'image': document.getElementById('im'+id).value,
-                'link': document.getElementById('gl'+id).value})
+        location.reload()
     }
 
     async function newpro() {

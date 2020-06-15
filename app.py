@@ -104,9 +104,7 @@ def add_message():
 @app.route('/projects/<id>', methods=['PATCH'])
 @requires_auth('patch:project')
 def update_project(payload, id):
-    print("11111")
     data = request.get_json()
-    print(data)
     project = Project.query.get(id)
     project.name = data.get('name')
     project.description = data.get('description')
