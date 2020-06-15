@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Hassan Algadah</title>
+    <link rel="stylesheet" href="../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic">
+    <link rel="stylesheet" href="../static/assets/fonts/font-awesome.min.css">
+    <script>
+
+    </script>
+</head>
+
+<body id="page-top">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top bg-dark text-uppercase" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top"><strong>portfolio</strong></a>
+        <button data-toggle="collapse" data-target="#navbarResponsive"
+                class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Projects</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation"><a
+                        class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/admin">admin page</a></li>
+                <li class="nav-item mx-0 mx-lg-1" role="presentation">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                       href="https://dev--g8cs8k5.auth0.com/v2/logout?client_id=42DvQROM7iUYGlV1Os0Ncf7B0FDHaRyo&returnTo=https://full-stack-portfolio-api.herokuapp.com/">log
+                        out</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="masthead bg-primary text-white text-center">
+    <div class="container"><img class="img-fluid d-block mx-auto mb-5" src="../static/assets/img/profile.png">
+        <h1>Hassan Algadah</h1>
+        <hr class="star-light">
+        <h2 class="font-weight-light mb-0">Web Developer - Android Developer</h2>
+    </div>
+</header>
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-secondary">Projects</h2>
+        <hr class="star-dark mb-5">
+        <div class="row" id="row">
+
+
+        </div>
+    </div>
+</section>
+<section id="about" class="bg-primary text-white mb-0">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-white">About</h2>
+        <hr class="star-light mb-5">
+        <div class="row">
+            <div class="col-lg-4 ml-auto">
+                <p class="lead">Software engineering senior student at King Saud University heavily interested in the
+                    Full-Stack field and the mobile&nbsp;application development field<br>Looking for an internship in a
+                    software development company&nbsp;<br></p>
+            </div>
+            <div class="col-lg-4 mr-auto">
+                <p class="lead">Bachelor's Degree in Software engineering from KSU<br><br>Udacity's Nanodgree in Android
+                    Development<br><br>Udacity's Nanodgree in Full-Stack Development<br></p>
+            </div>
+        </div>
+        <div class="text-center mt-4"></div>
+    </div>
+</section>
+<section id="contact">
+    <div class="container">
+        <h2 class="text-uppercase text-center text-secondary mb-0">Contact Me</h2>
+        <hr class="star-dark mb-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <form id="contactForm" method="post" action="/messages" name="sentMessage" novalidate="novalidate">
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Name</label><input
+                                class="form-control" type="text" id="name" name="name" required=""
+                                placeholder="Name"><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Email
+                            Address</label><input class="form-control" type="email" name="email" id="email" required=""
+                                                  placeholder="Email Address"><small
+                                class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-0 pb-2"><label>Phone Number</label><input
+                                class="form-control" type="tel" id="phone" name="number" required=""
+                                placeholder="Phone Number"><small class="form-text text-danger help-block"></small>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls mb-5 pb-2"><textarea
+                                class="form-control" id="message" required="" name="message" placeholder="Message"
+                                rows="5"></textarea><small class="form-text text-danger help-block"></small></div>
+                    </div>
+                    <div id="success"></div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="footer text-center" style="background-color: rgb(52, 58, 64);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Location</h4>
+                <p>Saudi Arabia - Riyadh</p>
+            </div>
+            <div class="col-md-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase">Around the Web</h4>
+                <ul class="list-inline">
+                    <li class="list-inline-item"></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://www.linkedin.com/in/hassan-algadah/"><i
+                            class="fa fa-linkedin-square fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://twitter.com/g33dh"><i
+                            class="fa fa-twitter fa-fw"></i></a></li>
+                    <li class="list-inline-item"><a class="btn btn-outline-light btn-social text-center rounded-circle"
+                                                    role="button" href="https://github.com/HassanAlgadah"><i
+                            class="fa fa-github fa-fw"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright py-4 text-center text-white" style="background-color: rgb(30,34,37);">
+    <div class="container"><small>Copyright ©&nbsp;Hassan algadah 2020</small></div>
+</div>
+{% for d in data %}
+    <div class="d-lg-none scroll-to-top position-fixed rounded"><a
+            class="d-block js-scroll-trigger text-center text-white rounded" href="#page-top"><i
+            class="fa fa-chevron-up"></i></a></div>
+    <div class="modal text-center" role="dialog" tabindex="-1" id="index{{ d.id }}">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container text-center">
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <h2 class="text-uppercase text-secondary mb-0">{{ d.name }}</h2>
+                                <hr class="star-dark mb-5">
+                                <img class="img-fluid mb-5" src={{ d.image }}>
+                                <p class="mb-5">{{ d.description }}</p>
+                                <p class="mb-5"><a href="{{ d.link }}">github link</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer pb-5"><a
+                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
+                        href="#"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+<script src="../static/assets/js/jquery.min.js"></script>
+<script src="../static/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+<script src="../static/assets/js/freelancer.js"></script>
+<script>
+    if (window.localStorage.getItem('access_token'))
+        window.localStorage.clear()
+
+    let access_token = new URLSearchParams(window.location.hash).get('#access_token');
+    if (access_token && !window.localStorage.getItem('access_token')) {
+        window.localStorage.setItem("access_token", access_token);
+    }
+
+    async function load_projects() {
+        let response = await fetch('/projects', {
+            method: 'get',
+            headers: {
+                'Authorization': 'Bearer ' + window.localStorage.getItem('access_token'),
+            }
+
+        })
+        let data = await response.json()
+        for (project in data.projects) {
+            document.getElementById('row').innerHTML += "<div class=\"col-md-6 col-lg-4\">\n" +
+                "                    <a class=\"d-block mx-auto portfolio-item\" data-toggle=\"modal\" href=\"#index" + data.projects[project].id + "\">\n" +
+                "                        <div class=\"d-flex portfolio-item-caption position-absolute h-100 w-100\">\n" +
+                "                            <div class=\"my-auto portfolio-item-caption-content w-100 text-center text-white\"><i class=\"fa fa-search-plus fa-3x\"></i></div>\n" +
+                "                        </div><img class=\"img-fluid\" style=\"height: 300px;width:300px\" src=\"" + data.projects[project].image + "\"></a>\n" +
+                "                </div>"
+        }
+    }
+
+    load_projects()
+
+
+</script>
+</body>
+
+</html>

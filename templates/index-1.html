@@ -23,7 +23,7 @@
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Projects</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a></li>
                     <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a></li>
-                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://dev--g8cs8k5.auth0.com/authorize?audience=Portfolio%20API&response_type=token&client_id=42DvQROM7iUYGlV1Os0Ncf7B0FDHaRyo&redirect_uri=https://full-stack-portfolio-api.herokuapp.com/admin">Sign in</a></li>
+                    <li class="nav-item mx-0 mx-lg-1" role="presentation"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://dev--g8cs8k5.auth0.com/authorize?audience=Portfolio%20API&response_type=token&client_id=42DvQROM7iUYGlV1Os0Ncf7B0FDHaRyo&redirect_uri=http://127.0.0.1:5000/reader">Sign in</a></li>
                 </ul>
             </div>
         </div>
@@ -39,17 +39,18 @@
         <div class="container">
             <h2 class="text-uppercase text-center text-secondary">Projects</h2>
             <hr class="star-dark mb-5">
-            <div class="row">
-
-            {% for d in data %}
-                <div class="col-md-6 col-lg-4">
-                    <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#index{{ d.id }}">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" style="height: 300px;width:300px" src="{{ d.image }}"></a>
-                </div>
-            {% endfor %}
-            </div>
+            <p>you need Reader's permissions to see the projects</p>
+{#            <div class="row">#}
+{##}
+{#            {% for d in data %}#}
+{#                <div class="col-md-6 col-lg-4">#}
+{#                    <a class="d-block mx-auto portfolio-item" data-toggle="modal" href="#index{{ d.id }}">#}
+{#                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">#}
+{#                            <div class="my-auto portfolio-item-caption-content w-100 text-center text-white"><i class="fa fa-search-plus fa-3x"></i></div>#}
+{#                        </div><img class="img-fluid" style="height: 300px;width:300px" src="{{ d.image }}"></a>#}
+{#                </div>#}
+{#            {% endfor %}#}
+{#            </div>#}
         </div>
     </section>
     <section id="about" class="bg-primary text-white mb-0">

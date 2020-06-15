@@ -20,8 +20,15 @@ def admin_page():
     return render_template('admin-page.html', data=projects)
 
 
+@app.route('/reader')
+def reader_page():
+    projects = Project.query.all()
+    return render_template('reader-page.html', data=projects)
+
+
 @app.route('/projects')
-def get_all_projects():
+@requires_auth('get:projects')
+def get_all_projects(payload):
     try:
         projects = Project.query.all()
         data = []
@@ -30,6 +37,8 @@ def get_all_projects():
                 'id': project.id,
                 'name': project.name,
                 'image': project.image,
+                'link': project.link,
+                'description': project.description
             })
         return jsonify({
             'success': True,
