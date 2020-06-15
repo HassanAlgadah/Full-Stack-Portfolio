@@ -51,11 +51,6 @@ def get_project(id):
 def get_all_messages(payload):
     try:
         messages = Message.query.all()
-        if len(messages) == 0:
-            return jsonify({
-                'success': True,
-                'messages': "there is no messages"
-            })
         data = []
         for message in messages:
             data.append({

@@ -284,7 +284,7 @@
 
         })
        let data = await response.json()
-        console.log(data.messages[0].name)
+        console.log(data.messages)
         for (message in data.messages) {
             document.getElementById('contact').innerHTML += "        <div class=\"container\">\n" +
                 "            <hr class=\"star-dark mb-5\">\n" +
